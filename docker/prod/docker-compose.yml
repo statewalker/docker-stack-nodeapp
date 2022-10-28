@@ -1,0 +1,24 @@
+version: '3.7'
+networks:
+  internal-network:
+    name: ${CONTEXT_NAME}_network
+services:
+  abc:
+    build:
+      context: ${PWD}
+      dockerfile: ${PWD}/docker/prod/Dockerfile
+    container_name: ${CONTEXT_NAME}_abc
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - HTTP_PORT=80
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.abc.entrypoints=web"
+      - "traefik.http.routers.abc.rule=Host(`$PROD_HOST`)"
+      - "traefik.http.services.abc.loadbalancer.server.port=80"
+    networks:
+      - internal-network

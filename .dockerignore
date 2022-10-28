@@ -1,0 +1,7 @@
+node_modules
+docker
+data-*
+scripts
+.dockerignore
+.env
+.git
