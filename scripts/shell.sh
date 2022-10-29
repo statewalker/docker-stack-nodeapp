@@ -7,4 +7,4 @@ if [ ! -f ".env" ]; then
 fi
 source .env
 
-docker exec -it ${CONTEXT_NAME}_abc_dev bash
+docker exec -it ${CONTEXT_NAME}_myapp_dev bash
