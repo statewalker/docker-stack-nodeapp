@@ -13,10 +13,12 @@ https://www.docker.com/blog/how-to-setup-your-local-node-js-development-environm
     * `docker-compose.yml` - Traefic Docker compose configuration
 * `scripts/` - shell/bash scripts 
   * `build.sh` - builds all Docker compose files
+  * `kill.sh` - removes all running docker containers 
   * `run.sh` - utility script used by the `build.sh`, `start.sh` and `stop.sh`
      to perform a command on a set of Docker compose configurations
   * `start.sh` - starts all applications 
   * `stop.sh` - stops all applications
+  * `shell.sh` - connects to the dev container and opens a bash shell 
 * `src/` - source code for this project
 * `.env.template` - template with default environment variables; this template is copied to the `.env` file
   (if it was not explicity defined)
