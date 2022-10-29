@@ -3,11 +3,11 @@ networks:
   internal-network:
     name: ${CONTEXT_NAME}_network
 services:
-  abc_dev:
+  sw_site_dev:
     build:
       context: ${PWD}
       dockerfile: ${PWD}/docker/dev/Dockerfile
-    container_name: ${CONTEXT_NAME}_abc_dev
+    container_name: ${CONTEXT_NAME}_sw_site_dev
     environment:
       - USER_UID=1000
       - USER_GID=1000
@@ -18,8 +18,8 @@ services:
       - /etc/localtime:/etc/localtime:ro
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.abc_dev.entrypoints=web"
-      - "traefik.http.routers.abc_dev.rule=Host(`$DEV_HOST`)"
-      - "traefik.http.services.abc_dev.loadbalancer.server.port=80"
+      - "traefik.http.routers.sw_site_dev.entrypoints=web"
+      - "traefik.http.routers.sw_site_dev.rule=Host(`$DEV_HOST`)"
+      - "traefik.http.services.sw_site_dev.loadbalancer.server.port=80"
     networks:
       - internal-network
