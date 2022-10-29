@@ -4,6 +4,6 @@ RUN apk add --no-cache bash
 
 WORKDIR /app
 COPY . .
-RUN yarn --prod
+RUN yarn --prod && yarn --prod build
 
 CMD [ "yarn", "start" ]
