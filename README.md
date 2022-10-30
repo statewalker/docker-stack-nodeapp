@@ -28,8 +28,7 @@ https://www.docker.com/blog/how-to-setup-your-local-node-js-development-environm
 
 ## Getting Started
 
-
-### Development Mode
+### Development Mode
 
 TLDR:
 * `./scripts/dev.sh` - starts dev containers
