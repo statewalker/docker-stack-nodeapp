@@ -8,9 +8,10 @@ services:
       context: ${PWD}
       dockerfile: ${PWD}/docker/dev/Dockerfile
     container_name: ${CONTEXT_NAME}_myapp_dev
+    user: "${UID}:${GID}"
     environment:
-      - USER_UID=1000
-      - USER_GID=1000
+      - USER_UID=${UID}
+      - USER_GID=${GID}
       - PORT=80
     volumes:
       - "${PWD}:/app"

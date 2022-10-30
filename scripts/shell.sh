@@ -7,4 +7,4 @@ if [ ! -f ".env" ]; then
 fi
 source .env
 
-docker exec -it ${CONTEXT_NAME}_myapp_dev bash
+env UID=$(id -u) GID=$(id -g) docker exec -it ${CONTEXT_NAME}_myapp_dev bash

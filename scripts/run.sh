@@ -13,9 +13,8 @@ if [ "$command" = "" ]; then
   exit 
 fi
 
-docker-compose \
+docker compose \
   --project-directory "$dir" \
   -f "$dir/docker/traefik/docker-compose.yml" \
-  -f "$dir/docker/dev/docker-compose.yml" \
   -f "$dir/docker/prod/docker-compose.yml" \
   $command

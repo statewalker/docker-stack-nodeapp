@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "",
+    "build": "echo 'Done'",
     "start": "node index.js",
     "dev": "yarn && nodemon index.js"
   },
