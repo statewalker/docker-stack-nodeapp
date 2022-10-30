@@ -1,5 +1,8 @@
 FROM node:18-alpine
 
+# Check https://github.com/nodejs/docker-node/tree/27f5a992bc36a3ef61157ce7dc28d98c5aceb744#nodealpine to understand why libc6-compat might be needed.
+RUN apk add --no-cache libc6-compat
+
 RUN apk add --no-cache bash
 
 WORKDIR /app

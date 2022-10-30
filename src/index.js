@@ -1,6 +1,6 @@
 import http from 'http';
 
-const port = process.env.HTTP_PORT || 5000;
+const port = process.env.PORT || 5000;
 let numVisits = 0;
 http
   .createServer((req, res) => {
