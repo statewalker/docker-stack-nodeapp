@@ -2,6 +2,11 @@ node_modules
 data-*
 .env
 .git
+<<<<<<< HEAD
 .vscode
 .next
 tmp*
+=======
+.next
+.vscode
+>>>>>>> 48e59b9 (update conf)
