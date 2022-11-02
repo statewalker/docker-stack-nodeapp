@@ -242,18 +242,9 @@ function HeroBlock() {
         </ul>
         <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 md:flex-col md:space-y-4 md:space-x-0 lg:flex-row lg:space-y-0 lg:space-x-4"><a className="px-6 py-2 flex justify-center items-center space-x-3 rounded-md border font-medium focus:outline-none focus:ring-2 focus:ring-violet-300 dark:focus:ring-violet-900 bg-violet-600 text-violet-50 border-violet-800 hover:bg-violet-500 dark:bg-violet-600 dark:border-violet-700 dark:hover:bg-violet-500 dark:hover:border-violet-600" aria-label="Get started" href="/docs/getting-started"><span>Get started</span></a><a className="px-6 py-2 flex justify-center items-center space-x-3 rounded-md border font-medium focus:outline-none focus:ring-2 focus:ring-violet-300 dark:focus:ring-violet-900 bg-violet-100 text-violet-800 border-violet-200 hover:bg-violet-50 dark:text-violet-300 dark:border-violet-500/30 dark:hover:bg-violet-500/30 dark:bg-violet-500/20" aria-label="Why Contentlayer?" href="/blog/working-with-content-is-hard-for-developers"><span>Why Contentlayer?</span></a></div>
       </div>
-      <div className="relative flex w-full items-center">
-        <div className="overflow-hidden rounded-2xl border border-gray-100 bg-gray-50 dark:border-gray-800 dark:bg-gray-900 shadow-lg shadow-gray-100 dark:shadow-gray-900 w-full">
-          <div className="relative -mb-3">
-            xxx
-            <div className="absolute inset-0 flex cursor-pointer items-center justify-center">
-              <div className="relative w-16 text-violet-600 hover:text-violet-500 dark:text-violet-500 dark:hover:text-violet-400">
-                <svg viewBox="0 0 116 115" fill="current" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M57.9993 114.857C73.1545 114.857 87.689 108.837 98.4054 98.1204C109.122 87.404 115.142 72.8695 115.142 57.7143C115.142 42.5591 109.122 28.0246 98.4054 17.3082C87.689 6.59183 73.1545 0.571434 57.9993 0.571434C42.8441 0.571434 28.3096 6.59183 17.5932 17.3082C6.87684 28.0246 0.856445 42.5591 0.856445 57.7143C0.856445 72.8695 6.87684 87.404 17.5932 98.1204C28.3096 108.837 42.8441 114.857 57.9993 114.857ZM54.8207 37.4857C53.745 36.768 52.4946 36.3558 51.203 36.2931C49.9114 36.2303 48.6269 36.5194 47.4867 37.1295C46.3465 37.7395 45.3933 38.6477 44.7288 39.7571C44.0643 40.8665 43.7134 42.1354 43.7136 43.4286V72C43.7134 73.2932 44.0643 74.5621 44.7288 75.6715C45.3933 76.7809 46.3465 77.689 47.4867 78.2991C48.6269 78.9092 49.9114 79.1983 51.203 79.1355C52.4946 79.0728 53.745 78.6606 54.8207 77.9429L76.2493 63.6571C77.2276 63.0048 78.0297 62.1211 78.5844 61.0844C79.1392 60.0477 79.4295 58.8901 79.4295 57.7143C79.4295 56.5385 79.1392 55.3809 78.5844 54.3442C78.0297 53.3075 77.2276 52.4237 76.2493 51.7714L54.8207 37.4857Z"></path>
-                </svg>
-              </div>
-            </div>
-          </div>
+      <div className="relative flex items-center rounded-2xl border border-gray-100 bg-gray-50 dark:border-gray-800 dark:bg-gray-900 shadow-lg shadow-gray-100 dark:shadow-gray-900 w-full">
+        <div className="w-full text-center">
+          <img className="" src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"></img> 
         </div>
       </div>
     </div>

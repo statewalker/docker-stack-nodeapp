@@ -9,4 +9,8 @@ tmp*
 =======
 .next
 .vscode
+<<<<<<< HEAD
 >>>>>>> 48e59b9 (update conf)
+=======
+tmp*
+>>>>>>> 2351cdf (wip)
