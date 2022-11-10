@@ -47,15 +47,13 @@ export const Container: FC<any> = ({ children, ...customMeta }) => {
         <meta name="twitter:image" content={meta.image} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </Head>
-      <SearchProvider>
-        <MainNavigation />
-        <div className="flex min-h-screen flex-col justify-between">
-          <main className="relative pt-16" style={{ scrollPaddingTop: '150px' }}>
-            {children}
-          </main>
-          <Footer />
-        </div>
-      </SearchProvider>
+      <MainNavigation />
+      <div className="flex min-h-screen flex-col justify-between">
+        <main className="relative pt-16" style={{ scrollPaddingTop: '150px' }}>
+          {children}
+        </main>
+        <Footer />
+      </div>
     </>
   )
 }

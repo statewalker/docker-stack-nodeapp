@@ -5,7 +5,6 @@ import { FC, useState } from 'react'
 import { Label } from './Label'
 import { Logo } from './Logo'
 import { useRouter } from 'next/router'
-import { ColorSchemeSwitcher } from './ColorSchemeSwitcher'
 import { isExternalUrl } from '@/lib/helpers'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
@@ -26,13 +25,11 @@ const NavLink: FC<{ label?: string; hideLabel?: boolean; icon?: any; url: string
   const active = true; // FIXME: router.pathname.split('/')[1] == url.replace('/', '')
 
   return (
-    <Link href={url} className={`group flex h-8 items-center rounded-md bg-transparent px-3 text-sm font-medium leading-none ${
+    <a href={url} className={`group flex h-8 items-center rounded-md bg-transparent px-3 text-sm font-medium leading-none ${
           active
             ? 'bg-violet-50 text-violet-900 dark:bg-violet-500/20 dark:text-violet-50'
             : 'text-slate-600 hover:bg-gray-50 hover:text-slate-700 dark:text-slate-300 dark:hover:bg-gray-900 dark:hover:text-slate-200'
         }`}
-        target={isExternalUrl(url) ? '_blank' : undefined}
-        rel={isExternalUrl(url) ? 'noreferrer' : undefined}
       >
         {icon && (
           <span className="block w-5 text-slate-400 group-hover:text-slate-500 dark:text-slate-500 dark:group-hover:text-slate-400">
@@ -40,7 +37,7 @@ const NavLink: FC<{ label?: string; hideLabel?: boolean; icon?: any; url: string
           </span>
         )}
         {label && <span className={hideLabel ? 'sr-only' : ''}>{label}</span>}
-    </Link>
+    </a>
   )
 }
 
@@ -89,9 +86,6 @@ export const MainNavigation = () => {
             {navLinks.map(({ label, url }, index) => (
               <NavLink key={index} label={label} url={url} icon={isExternalUrl(url) ? 'external-link' : undefined} />
             ))}
-          </div>
-          <div className="flex items-center lg:space-x-2">
-            <ColorSchemeSwitcher></ColorSchemeSwitcher>
           </div>
         </nav>
       </div>

@@ -25,9 +25,9 @@ const content = {
       </p>
       <p className="mt-2">
         Made with 💜 by{' '}
-        <Link href="https://twitter.com/schickling" className="hover:text-slate-700 dark:hover:text-slate-300" target="_blank" rel="noreferrer">
+        <a href="https://twitter.com/schickling" className="hover:text-slate-700 dark:hover:text-slate-300" target="_blank" rel="noreferrer">
             @schickling
-        </Link>{' '}
+        </a>{' '}
         & community
       </p>
     </>
@@ -48,7 +48,7 @@ const content = {
       elements: [
         {
           label: 'Next.js (TypeScript)',
-          url: '/examples/nextjs',
+          url: 'https://www.typescriptlang.org/',
         },
       ],
     },
@@ -83,16 +83,14 @@ export const Footer: FC = () => {
               <ul className="mx-0 mt-4 list-none space-y-2 text-sm">
                 {elements.map(({ label, url }, index) => (
                   <li key={index}>
-                    <Link href={url} className="inline-flex items-center space-x-1 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300"
-                        target={isExternalUrl(url) ? '_blank' : undefined}
-                      >
+                    <a href={url} className="inline-flex items-center space-x-1 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300">
                         <span>{label}</span>
                         {isExternalUrl(url) && (
                           <span className="inline-block w-4">
                             <ArrowTopRightOnSquareIcon />
                           </span>
                         )}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>

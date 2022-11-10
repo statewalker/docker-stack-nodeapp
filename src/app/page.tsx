@@ -1,4 +1,4 @@
-// import Link from 'next/link';
+import Image from 'next/image';
 import { loadData } from "@/lib/api"
 
 import { BoltIcon, ChatBubbleBottomCenterTextIcon, GlobeAltIcon, ScaleIcon } from '@heroicons/react/24/outline'
@@ -244,7 +244,7 @@ function HeroBlock() {
       </div>
       <div className="relative flex items-center rounded-2xl border border-gray-100 bg-gray-50 dark:border-gray-800 dark:bg-gray-900 shadow-lg shadow-gray-100 dark:shadow-gray-900 w-full">
         <div className="w-full text-center">
-          <img className="" src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"></img> 
+          <Image className="" alt="Fast! Blazing Fast!" src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" /> 
         </div>
       </div>
     </div>
@@ -264,9 +264,9 @@ export default async function Page() {
   const data = await loadData();
   return (
     <div className="bg-white py-12">
-      <Section><HeroBlock /></Section>
-      <Section className="bg-gray-50 dark:bg-gray-900/50"><FeaturesList /></Section>
-      <Section><Steps /></Section>
+      <Section><HeroBlock></HeroBlock></Section>
+      <Section className="bg-gray-50 dark:bg-gray-900/50"><FeaturesList></FeaturesList></Section>
+      <Section><Steps></Steps></Section>
     </div>
   );
 }
