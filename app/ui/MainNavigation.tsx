@@ -5,7 +5,7 @@ import { FC, useState } from 'react'
 import { Label } from './Label'
 import { Logo } from './Logo'
 import { useRouter } from 'next/router'
-import { isExternalUrl } from '@/lib/helpers'
+import { isExternalUrl } from '../lib/helpers'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navLinks: Array<{ label: string; url: string }> = [

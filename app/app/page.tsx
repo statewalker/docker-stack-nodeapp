@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { loadData } from "@/lib/api"
+import { loadData } from "@/lib/api.ts"
 
 import { BoltIcon, ChatBubbleBottomCenterTextIcon, GlobeAltIcon, ScaleIcon } from '@heroicons/react/24/outline'
 

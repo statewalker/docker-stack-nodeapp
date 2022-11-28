@@ -1,4 +1,4 @@
-import '@/styles/globals.css';
+// import '@/styles/globals.css';
 import { ColorSchemeProvider } from '@/ui/ColorSchemeContext'
 import { MainNavigation } from "@/ui/MainNavigation";
 
