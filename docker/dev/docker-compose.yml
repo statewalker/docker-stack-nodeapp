@@ -15,7 +15,7 @@ services:
       - USER_GID=${GID}
       - PORT=80
     volumes:
-      - "${PWD}/app:/app"
+      - "${PWD}/webapp:/webapp"
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     labels:
