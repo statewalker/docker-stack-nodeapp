@@ -6,13 +6,11 @@ import { hydrateRoot } from "react-dom/client";
 import { I18nextProvider, initReactI18next } from "react-i18next";
 import { getInitialNamespaces } from "remix-i18next";
 import i18n from "./i18n"; // your i18n configuration file
-import setupTwind from "./twind.config";
-
-setupTwind();
 
 Promise.resolve().then(main).catch(console.error);
 
 async function main() {
+  if (!i18next.isInitialized) {
   await i18next
     .use(initReactI18next) // Tell i18next to use the react-i18next plugin
     .use(LanguageDetector) // Setup a client-side language detector
@@ -34,6 +32,7 @@ async function main() {
         caches: [],
       },
     });
+  }
 
 
   // After i18next has been initialized, we can hydrate the app

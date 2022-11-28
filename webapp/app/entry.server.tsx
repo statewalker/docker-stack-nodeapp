@@ -8,11 +8,6 @@ import { I18nextProvider, initReactI18next } from "react-i18next";
 import i18next from "./i18next.server";
 import i18n from './i18n'; // your i18n configuration file
 
-import inline from '@twind/with-remix/server'
-import setupTwind from './twind.config';
-setupTwind();
-
-
 export default async function handleRequest(
   request: Request,
   statusCode: number,
@@ -47,9 +42,6 @@ export default async function handleRequest(
       <RemixServer context={context} url={request.url} />
     </I18nextProvider>
   );
-
-  // Add twind styles to the markup
-  markup = inline(markup)
 
   headers.set("Content-Type", "text/html");
 

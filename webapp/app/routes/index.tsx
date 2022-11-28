@@ -13,8 +13,8 @@ export let handle = {
 export default function Index() {
   let { t } = useTranslation("home");
   return (
-    <main className="h-screen bg-purple-400 flex items-center justify-center">
-      <h1 className="font-bold /* you can even use inline comments */ text-(center 5xl white sm:gray-800 md:pink-700)">
+    <main>
+      <h1>
        {t("title")}
       </h1>
     </main>
