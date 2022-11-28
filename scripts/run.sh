@@ -5,7 +5,8 @@ dir=`pwd`
 if [ ! -f ".env" ]; then
   cp .env.template .env 
 fi
-source .env
+# source .env
+export $(grep -v '^#' .env | xargs -d '\n')
 
 command="$@"
 if [ "$command" = "" ]; then

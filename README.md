@@ -20,11 +20,12 @@ https://www.docker.com/blog/how-to-setup-your-local-node-js-development-environm
   * `start.sh` - starts prod applications 
   * `stop.sh` - stops prod applications
   * `shell.sh` - connects to the dev container and opens a bash shell 
-* `src/` - source code for this project
-* `.env.template` - template with default environment variables; this template is copied to the `.env` file
-  (if it was not explicity defined)
-* `index.js` - the application entry point
-* `package.json` - node configuration file
+* `app/` - application folder
+  * `src/` - source code for this project
+  * `.env.template` - template with default environment variables; this template is copied to the `.env` file
+    (if it was not explicity defined)
+  * `index.js` - the application entry point
+  * `package.json` - node configuration file
 
 ## Getting Started
 

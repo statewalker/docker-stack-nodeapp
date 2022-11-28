@@ -5,8 +5,8 @@ dir=`pwd`
 if [ ! -f ".env" ]; then
   cp .env.template .env 
 fi
-source .env
-
+# source .env
+export $(grep -v '^#' .env | xargs -d '\n')
 env UID=$(id -u) GID=$(id -g) docker-compose \
   --project-directory "$dir" \
   -f "$dir/docker/traefik/docker-compose.yml" \
@@ -14,7 +14,6 @@ env UID=$(id -u) GID=$(id -g) docker-compose \
   up -d
 
 docker exec -it ${CONTEXT_NAME}_myapp_dev yarn dev
-
 env UID=$(id -u) GID=$(id -g) docker-compose \
   --project-directory "$dir" \
   -f "$dir/docker/traefik/docker-compose.yml" \

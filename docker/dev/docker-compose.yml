@@ -8,13 +8,14 @@ services:
       context: ${PWD}
       dockerfile: ${PWD}/docker/dev/Dockerfile
     container_name: ${CONTEXT_NAME}_myapp_dev
+    restart: always
     user: "${UID}:${GID}"
     environment:
       - USER_UID=${UID}
       - USER_GID=${GID}
       - PORT=80
     volumes:
-      - "${PWD}:/app"
+      - "${PWD}/app:/app"
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     labels:

@@ -8,6 +8,7 @@ services:
       context: ${PWD}
       dockerfile: ${PWD}/docker/prod/Dockerfile
     container_name: ${CONTEXT_NAME}_myapp
+    restart: always
     environment:
       - USER_UID=1000
       - USER_GID=1000
