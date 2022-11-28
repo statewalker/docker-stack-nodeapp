@@ -1258,6 +1258,13 @@
   dependencies:
     "@swc/helpers" "^0.4.11"
 
+"@twind/preset-typography@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@twind/preset-typography/-/preset-typography-1.0.1.tgz#d8236dd9d2d98d2361ae6c7c9ec1babd60fd3897"
+  integrity sha512-y3rvn4yS3x01jogP6WtKHWNmuNHdIrxHBDey2qC93GvHxFGIVRnye0n6UY4HIqlOPBjSuKDF3sV6e4g2kl+weQ==
+  dependencies:
+    "@swc/helpers" "^0.4.11"
+
 "@twind/with-remix@1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@twind/with-remix/-/with-remix-1.0.1.tgz#f1c158e06a756a5d3f4785870b86f73a73463977"
