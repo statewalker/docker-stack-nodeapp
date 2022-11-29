@@ -1,29 +1,5 @@
 // import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from 'remix'
-import type { MetaFunction } from "remix";
-
-export const meta: MetaFunction = () => {
-  return { title: "New Remix App" };
-};
-
-// export default function App() {
-//   return (
-//     <html lang="en">
-//       <head>
-//         <meta charSet="utf-8" />
-//         <meta name="viewport" content="width=device-width,initial-scale=1" />
-//         <Meta />
-//         <Links />
-//       </head>
-//       <body>
-//         <Outlet />
-//         <ScrollRestoration />
-//         <Scripts />
-//         {process.env.NODE_ENV === 'development' && <LiveReload />}
-//       </body>
-//     </html>
-//   )
-// }
-
+import type { LinksFunction, MetaFunction } from "remix";
 import { json, LoaderFunction } from "@remix-run/node";
 import {
   Links,
@@ -37,13 +13,25 @@ import {
 import { useChangeLanguage } from "remix-i18next";
 import { useTranslation } from "react-i18next";
 import i18next from "./i18next.server";
-
+import reset from "@unocss/reset/tailwind.css";
+import uno from "~/styles/uno.css";
 type LoaderData = { locale: string };
 
 export let loader: LoaderFunction = async ({ request }) => {
   let locale = await i18next.getLocale(request);
   return json<LoaderData>({ locale });
 };
+
+export const meta: MetaFunction = () => ({
+  charset: "utf-8",
+  title: "New Remix App",
+  viewport: "width=device-width,initial-scale=1",
+});
+
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: reset },
+  { rel: "stylesheet", href: uno },
+];
 
 export let handle = {
   // In the handle export, we can add a i18n key with namespaces our route
@@ -68,8 +56,6 @@ export default function App() {
   return (
     <html lang={locale} dir={i18n.dir()}>
       <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
         <Links />
       </head>

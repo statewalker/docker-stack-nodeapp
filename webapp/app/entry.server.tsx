@@ -8,6 +8,9 @@ import { I18nextProvider, initReactI18next } from "react-i18next";
 import i18next from "./i18next.server";
 import i18n from './i18n'; // your i18n configuration file
 
+// TODO: update to render content for bots
+// See https://github.com/remix-run/examples/blob/main/unocss/app/entry.server.tsx
+
 export default async function handleRequest(
   request: Request,
   statusCode: number,
