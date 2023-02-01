@@ -5,9 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "echo 'Done'",
-    "start": "node index.js",
-    "dev": "yarn && nodemon index.js"
+    "prod": "node index.js",
+    "dev": "node index.js"
   },
   "dependencies": {
   },
