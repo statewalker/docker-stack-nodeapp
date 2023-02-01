@@ -5,8 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "prod": "node index.js",
-    "dev": "node index.js"
+    "build": "echo 'Done'",
+    "start": "node index.js",
+    "dev": "nodemon --watch src index.js"
   },
   "dependencies": {
   },
