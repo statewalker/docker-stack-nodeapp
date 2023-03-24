@@ -8,7 +8,7 @@ if [ "$newname" = "" ]; then
   echo ""
   echo "  > $0 <NEW_APP_NAME>"
   echo ""
-  echo "  ...where <NEW_APP_NAME> is the new application name instead of 'myapp'"
+  echo "  ...where <NEW_APP_NAME> is the new application name instead of 'swsite'"
   exit 
 fi
 
@@ -17,6 +17,6 @@ files="./scripts/*.sh \
   ./docker/** \
   ./webapp/*.json"
 
-find $files -type f -exec sed -i "s/myapp/$newname/g" {} +
+find $files -type f -exec sed -i "s/swsite/$newname/g" {} +
 
 echo "Done."

@@ -3,25 +3,24 @@ networks:
   internal-network:
     name: ${CONTEXT_NAME}_network
 services:
-  myapp_dev:
+  swsite_dev:
     build:
       context: ${PWD}
       dockerfile: ${PWD}/docker/dev/Dockerfile
-    container_name: ${CONTEXT_NAME}_myapp_dev
+    container_name: ${CONTEXT_NAME}_swsite_dev
     restart: always
     user: "${UID}:${GID}"
     environment:
       - USER_UID=${UID}
       - USER_GID=${GID}
-      - PORT=80
     volumes:
       - "${PWD}/webapp:/webapp"
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.myapp_dev.entrypoints=web"
-      - "traefik.http.routers.myapp_dev.rule=Host(`$DEV_HOST`)"
-      - "traefik.http.services.myapp_dev.loadbalancer.server.port=80"
+      - "traefik.http.routers.swsite_dev.entrypoints=web"
+      - "traefik.http.routers.swsite_dev.rule=Host(`$DEV_HOST`)"
+      - "traefik.http.services.swsite_dev.loadbalancer.server.port=3000"
     networks:
       - internal-network

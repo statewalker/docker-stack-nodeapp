@@ -8,4 +8,4 @@ fi
 # source .env
 export $(grep -v '^#' .env | xargs -d '\n')
 
-env UID=$(id -u) GID=$(id -g) docker exec -it ${CONTEXT_NAME}_myapp_dev bash
+env UID=$(id -u) GID=$(id -g) docker exec -it ${CONTEXT_NAME}_swsite_dev bash
