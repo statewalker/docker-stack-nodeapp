@@ -3,10 +3,6 @@ import http from 'http';
 const port = process.env.PORT || 5000;
 let numVisits = 0;
 
-function foobar(toto: string) {
-  
-}
-
 http
   .createServer((req, res) => {
     res
