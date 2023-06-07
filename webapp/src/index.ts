@@ -1,5 +1,6 @@
 import Fastify from "fastify";
 import FastifySwagger from "@fastify/swagger";
+import FastifySwaggerUI from "@fastify/swagger-ui";
 
 const port: number = Number(process.env.PORT) || 5000;
 let numVisits = 0;
@@ -51,6 +52,23 @@ async function main() {
       },
     },
   });
+
+  await fastify.register(FastifySwaggerUI, {
+    routePrefix: '/documentation',
+    uiConfig: {
+      docExpansion: 'full',
+      deepLinking: false
+    },
+    uiHooks: {
+      onRequest: function (request, reply, next) { next() },
+      preHandler: function (request, reply, next) { next() }
+    },
+    staticCSP: true,
+    transformStaticCSP: (header) => header,
+    transformSpecification: (swaggerObject, request, reply) => { return swaggerObject },
+    transformSpecificationClone: true
+  })
+  
 
   fastify.get('/', {
     schema: {
