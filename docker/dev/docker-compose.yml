@@ -13,15 +13,29 @@ services:
     environment:
       - USER_UID=${UID}
       - USER_GID=${GID}
-      - PORT=80
+      - SERVER_HOST=${DEV_SERVER_HOST}
+      - SERVER_PORT=${INTERNAL_SERVER_PORT}
+      - CLIENT_HOST=${DEV_CLIENT_HOST}
+      - CLIENT_PORT=${INTERNAL_CLIENT_PORT}
     volumes:
       - "${PWD}/webapp:/webapp"
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.myapp_dev.entrypoints=web"
-      - "traefik.http.routers.myapp_dev.rule=Host(`$DEV_HOST`)"
-      - "traefik.http.services.myapp_dev.loadbalancer.server.port=80"
+      # Configuration of multiple domains mappend to different ports 
+      # in one container: https://community.traefik.io/t/docker-container-with-multiple-ports/4657/2
+      # ------
+      # Server App
+      - "traefik.http.routers.myapp_dev_server.entrypoints=web"
+      - "traefik.http.routers.myapp_dev_server.rule=Host(`$DEV_SERVER_HOST`)"
+      - "traefik.http.routers.myapp_dev_server.service=myapp_dev_server_service"
+      - "traefik.http.services.myapp_dev_server_service.loadbalancer.server.port=$INTERNAL_SERVER_PORT"
+      # ------
+      # Client App
+      - "traefik.http.routers.myapp_dev_client.entrypoints=web"
+      - "traefik.http.routers.myapp_dev_client.rule=Host(`$DEV_CLIENT_HOST`)"
+      - "traefik.http.routers.myapp_dev_client.service=myapp_dev_client_service"
+      - "traefik.http.services.myapp_dev_client_service.loadbalancer.server.port=$INTERNAL_CLIENT_PORT"
     networks:
       - internal-network

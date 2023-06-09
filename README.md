@@ -21,11 +21,10 @@ https://www.docker.com/blog/how-to-setup-your-local-node-js-development-environm
   * `stop.sh` - stops prod applications
   * `shell.sh` - connects to the dev container and opens a bash shell 
 * `webapp/` - application folder
-  * `src/` - source code for this project
-  * `index.js` - the application entry point
+  * `client/` - a basic client application
+  * `server/` - a server-side (API) application
   * `package.json` - node configuration file
-* `.env.template` - template with default environment variables; this template is copied to the `.env` file
-  (if it was not explicity defined)
+* `.env.template` - template with default environment variables; this template is copied to the `.env` file (if it was not explicity defined)
 
 ## Getting Started
 
@@ -75,9 +74,13 @@ There are following parameters in this file used by Docker configurations to sta
 * `CONTEXT_DIR` - root directory where all data are stored
 * `CONTEXT_EMAIL` - default mail used to contact with the administrator of the site
 * `MAIN_URL` - the  main URL of the system
-* `HTTP_PORT` (default: 80) - the port of the reverse proxy (traefic)
+* `DEV_SERVER_HOST` - domain name of the server-side application in dev mode
+* `PROD_SERVER_HOST` - domain name of the production server-side application
+* `INTERNAL_SERVER_PORT` - the internal port of the server-side application; normally it should not be changed 
+* `DEV_CLIENT_HOST` - development host name of the client-side application
+* `PROD_CLIENT_HOST` - production host name of the client-side application
+* `INTERNAL_CLIENT_PORT`- internal port of the client-side application
+* `HTTP_PORT` (default: 80) - the port of the reverse proxy (traefik)
 * `HTTPS_PORT` (default: 443) - default port of the secured http connection with the proxy 
 * `TRAEFIK_DASHBOARD_HOST` (default: `traefik.localhost`) - URL of the traefic web portal
 * `TRAEFIK_DEBUG`(default: false) - flag defining if traefic shows or not debug messages
-* `DEV_HOST`- host of the dev service 
-* `PROD_HOST`- host name for the production service
