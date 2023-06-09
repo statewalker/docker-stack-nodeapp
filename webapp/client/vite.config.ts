@@ -4,6 +4,7 @@ import UnoCSS from "unocss/vite";
 import { fileURLToPath } from "url";
 import { defineConfig } from "vite";
 
+const port: number = Number(process.env.CLIENT_PORT) || 8080;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -20,10 +21,9 @@ export default defineConfig({
   ],
   server: {
     open: false,
-    host: true,
+    host: '0.0.0.0',
     cors: true,
-    port: 80,
-    // origin: "http://metanet-dev.localhost",
+    port,
     fs: {
       // Allow serving files from one level up to the project root
       allow: ["."],

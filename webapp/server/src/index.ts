@@ -2,7 +2,7 @@ import Fastify from "fastify";
 import FastifySwagger from "@fastify/swagger";
 import FastifySwaggerUI from "@fastify/swagger-ui";
 
-const port: number = Number(process.env.PORT) || 5000;
+const port: number = Number(process.env.SERVER_PORT) || 8081;
 let numVisits = 0;
 
 Promise.resolve().then(main).catch(console.error);
