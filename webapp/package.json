@@ -5,13 +5,17 @@
     "server"
   ],
   "scripts": {
-    "start": "yarn workspaces run start",
-    "build": "yarn workspaces run build",
-    "dev": "yarn workspaces run dev",
-    "test": "yarn workspaces run test",
-    "coverage": "yarn workspaces run coverage"
+    "start": "lerna run start",
+    "build": "lerna run build",
+    "dev": "lerna run dev",
+    "test": "lerna run test",
+    "coverage": "lerna run coverage"
   },
   "dependencies": {
     "yarn": "^1.22.19"
-  }
+  },
+  "devDependencies": {
+    "lerna": "^6.0.1"
+  },
+  "name": "webapp"
 }
