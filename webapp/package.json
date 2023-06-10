@@ -1,15 +1,14 @@
 {
   "private": true,
   "workspaces": [
-    "client",
-    "server"
+    "./packages/*"
   ],
   "scripts": {
-    "start": "lerna run start",
-    "build": "lerna run build",
-    "dev": "lerna run dev",
-    "test": "lerna run test",
-    "coverage": "lerna run coverage"
+    "start": "yarn && lerna run start",
+    "build": "yarn && lerna run build",
+    "dev": "yarn && lerna run dev",
+    "test": "yarn && lerna run test",
+    "coverage": "yarn && lerna run coverage"
   },
   "dependencies": {
     "yarn": "^1.22.19"
