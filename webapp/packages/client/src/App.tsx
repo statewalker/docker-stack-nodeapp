@@ -2,8 +2,6 @@ import { MouseEventHandler, PropsWithChildren } from "react";
 import { cn } from "./utils"
 import defineProperties from "./defineProperties";
 import useValues from "./useValues";
-import { SayHello } from "@iui/components"
-console.log('>>', SayHello);
 
 const appState = defineProperties({
   counter : 0
