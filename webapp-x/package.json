@@ -1,0 +1,16 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "Running Node.js and Express.js on Docker",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'Done'",
+    "start": "node index.js",
+    "dev": "nodemon --watch src index.js"
+  },
+  "dependencies": {
+  },
+  "author": "",
+  "license": "MIT"
+}

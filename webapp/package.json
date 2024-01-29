@@ -1,16 +1,16 @@
 {
-  "name": "web",
-  "version": "1.0.0",
-  "description": "Running Node.js and Express.js on Docker",
-  "main": "index.js",
-  "type": "module",
+  "private": true,
   "scripts": {
-    "build": "echo 'Done'",
-    "start": "node index.js",
-    "dev": "nodemon --watch src index.js"
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
-  "dependencies": {
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "@repo/eslint-config": "workspace:*",
+    "prettier": "^3.1.1",
+    "turbo": "latest"
   },
-  "author": "",
-  "license": "MIT"
+  "packageManager": "pnpm@8.9.0"
 }
