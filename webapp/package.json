@@ -1,10 +1,13 @@
 {
   "private": true,
+  "type": "module",
   "scripts": {
+    "clone": "node ./scripts/preinstall.js",
+    "preinstall": "yarn clone",
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "test": "turbo test",
+    "test": "turbo test --concurrency 30",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "changeset": "changeset",
     "version-packages": "changeset version"
@@ -20,5 +23,7 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "packages": {
+  }
 }
