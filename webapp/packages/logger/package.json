@@ -1,5 +1,5 @@
 {
-  "name": "@repo/core",
+  "name": "@repo/logger",
   "version": "0.0.0",
   "type": "module",
   "exports": {
@@ -11,11 +11,7 @@
     "lint": "eslint \"**/*.ts\"",
     "test": "vitest"
   },
-  "dependencies": {
-    "@preact/signals-core": "^1.5.1",
-    "@types/lodash.isequal": "^4.5.8",
-    "lodash.isequal": "^4.5.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
